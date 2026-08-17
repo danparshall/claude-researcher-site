@@ -1,32 +1,229 @@
 <!doctype html>
-<html>
-	<head>
+<html lang="en">
+<head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-	<title>Claude Researcher</title>
-	<link rel="stylesheet" href="fast.css">
-	</head>
-	<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Claude Researcher — Claude, with a memory for your research</title>
+	<meta name="description" content="A free toolkit that turns Claude into a research collaborator that remembers your work between sessions. Browser only, no installation, your data stays in accounts you own.">
+	<meta property="og:title" content="Claude Researcher">
+	<meta property="og:description" content="Turn Claude into a research collaborator that remembers your work between sessions. Browser only, no installation.">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-		<h1>Claude Researcher</h1>
-		<div class="topnav">
-			<a class="active" href="./index.html">Home</a>
-			<a href="./research.html">Research</a>
-			<a href="./about.html">About</a>
+<header class="hero">
+	<h1>Claude Researcher</h1>
+	<p class="tagline">Claude, with a memory for your research.</p>
+	<p class="lead">
+		If you use Claude for research, you know the frustration: every new chat is a blank slate.
+		The paper you discussed last week, the framing you settled on, the half-formed idea you wanted
+		to revisit — gone. <strong>Claude Researcher</strong> is a free toolkit that gives Claude a
+		persistent record of your work, so each session picks up where the last one left off.
+	</p>
+	<p class="lead">
+		It runs entirely in your browser. Nothing installs on your machine, and your work lives in
+		private accounts <em>you</em> own — we never see any of it.
+	</p>
+</header>
+
+<section class="cards">
+	<div class="card">
+		<h2>Want to understand it first?</h2>
+		<p>
+			Copy this into any Claude chat. Claude will read the project's public source
+			and explain it — including the caveats. Ask it anything.
+		</p>
+		<div class="paste-wrap">
+			<button class="copy-btn" type="button" aria-label="Copy the explainer prompt">Copy</button>
+			<pre class="paste-block" tabindex="0">I'm a researcher considering a toolkit called claude_researcher. It says it turns Claude into a research collaborator with persistent memory. Before I decide, please read its public source and explain it to me.
+
+Fetch these files:
+  https://raw.githubusercontent.com/danparshall/claude_researcher/main/README.md
+  https://raw.githubusercontent.com/danparshall/claude_researcher/main/HUMANS.md
+
+You may inspect anything else in https://github.com/danparshall/claude_researcher — nothing is hidden.
+
+In plain language: What does it do? What will it ask me to set up? (I understand there's a GitHub access token and a network-access setting.) Where does my data live, and who can see it? What are the real risks and downsides? Be candid — I'd rather hear the caveats now than after setup.</pre>
 		</div>
+	</div>
 
-		<h2>Bio</h2>
+	<div class="card">
+		<h2>Ready to begin?</h2>
 		<p>
-		I'm baby semiotics whatever vape, tumblr lumbersexual scenester sustainable copper mug squid health goth flexitarian PBR&amp;B keffiyeh distillery. Cold-pressed kombucha gentrify, slow-carb fanny pack pour-over taiyaki, ethical pop-up artisanal chambray normcore.
+			Copy this into a <strong>fresh</strong> Claude chat. Claude walks you through a one-time
+			setup — about 10 minutes — and asks before doing anything sensitive.
+		</p>
+		<div class="paste-wrap">
+			<button class="copy-btn" type="button" aria-label="Copy the setup prompt">Copy</button>
+			<pre class="paste-block" tabindex="0">I'd like to set up the claude_researcher workflow (https://github.com/danparshall/claude_researcher).
+
+Fetch https://raw.githubusercontent.com/danparshall/claude_researcher/main/README.md and find the "Quick start" section. It contains a setup prompt inside a code block. Follow that prompt exactly, as if I had pasted it here myself. It walks us through a one-time setup of about 10 minutes, with confirmation gates before anything sensitive.</pre>
+		</div>
+		<p class="fineprint">
+			You'll need a <a href="https://claude.ai">Claude</a> Pro or Team account and a free
+			<a href="https://github.com">GitHub</a> account. Never used GitHub? That's fine —
+			the setup assumes nothing.
+		</p>
+	</div>
+</section>
+
+<hr class="fold">
+
+<main>
+	<section id="what">
+		<h2>What is this, really?</h2>
+		<p>
+			Claude Researcher adds persistent memory to your claude.ai research sessions: a durable
+			record of your projects, the papers you've read, the conversations you've had, and the
+			reasoning that came out of them. The record lives in a private repository on GitHub —
+			think of it as a version-controlled lab notebook that both you and Claude can read and write.
 		</p>
 		<p>
-		Brunch count: 42 &middot; Mustache wax tier: artisanal.
+			It was built for researchers whose work machines are locked down — no admin rights, no
+			installing developer tools. Everything here runs through the browser: claude.ai on one
+			side, GitHub on the other.
 		</p>
+	</section>
 
+	<section id="session">
+		<h2>What a session feels like</h2>
 		<p>
-		<a href="https://github.com/">GitHub</a> |
-		<a href="https://www.linkedin.com/">LinkedIn</a>
+			Suppose you work on coastal adaptation policy. You open claude.ai and start a new chat:
+			<em>"Let's pick up the managed-retreat work."</em> Claude reads your profile and your
+			project's status file, then picks up where you left off: <em>"Last time we ended on the
+			tension between federal buyout efficiency and state-level political feasibility. Did you
+			find the GAO report?"</em>
 		</p>
+		<p>
+			You paste in a PDF; Claude files it, extracts the text, and indexes a summary against your
+			reading notes. You discuss for an hour. You say <em>"good stopping point,"</em> and Claude
+			writes a permanent record of the conversation, updates the status log, and notes what's
+			open for next time. Next week, in a fresh chat, everything is still there.
+		</p>
+	</section>
 
-	</body>
+	<section id="how">
+		<h2>How it works</h2>
+		<p>
+			Three pieces, all in plain sight:
+		</p>
+		<ul>
+			<li>
+				<strong>Two private GitHub repositories, owned by you.</strong> One holds your profile
+				and preferences; one holds each research project — papers, notes, conversation records.
+				Private means private: only accounts you authorize can see them.
+			</li>
+			<li>
+				<strong>A GitHub access token.</strong> During setup you create a scoped token and give
+				it to Claude through your claude.ai Project settings. That token is how Claude reads
+				and writes your repositories — it's your key, revocable by you at any time.
+			</li>
+			<li>
+				<strong>Public workflow instructions.</strong> At the start of each session, Claude
+				fetches its working rules from the public
+				<a href="https://github.com/danparshall/claude_researcher">claude_researcher</a> repo.
+				Every session runs the same canonical, inspectable playbook — and fixes propagate to
+				everyone automatically.
+			</li>
+		</ul>
+		<p>
+			Setup involves exactly two configuration screens, and Claude walks you through both:
+		</p>
+		<figure>
+			<img src="images/claude_egress_settings.png" loading="lazy"
+				alt="claude.ai Settings, Capabilities pane — the 'Allow network egress' toggle turned on, with the domain allowlist set">
+			<figcaption>
+				1. Allowing network access in claude.ai settings — this is what lets Claude reach
+				GitHub from inside its sandbox.
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="images/github_pat_read_write_flip.png" loading="lazy"
+				alt="GitHub fine-grained personal access token page showing repository permissions being configured">
+			<figcaption>
+				2. Creating the GitHub access token — the setup walks you through the exact
+				permissions, screen by screen.
+			</figcaption>
+		</figure>
+	</section>
+
+	<section id="privacy">
+		<h2>Is my data private?</h2>
+		<p>
+			Yes. Your repositories are private to your GitHub account. The token that grants access
+			exists only in your claude.ai Project settings, and you can revoke it from GitHub at any
+			time. Nothing about this project routes your data through us — there is no server of ours,
+			no analytics, no account with us at all. We literally could not read your work if we
+			wanted to.
+		</p>
+		<p>
+			And the flip side of that coin: everything Claude is instructed to do is public. The
+			workflow files, the setup script, the skills — all of it sits in the open at
+			<a href="https://github.com/danparshall/claude_researcher">github.com/danparshall/claude_researcher</a>.
+			The explainer prompt at the top of this page exists precisely so Claude itself can audit
+			the project for you before you commit to anything.
+		</p>
+	</section>
+
+	<section id="who">
+		<h2>Who's behind this</h2>
+		<p>
+			Claude Researcher is a collaboration between
+			<a href="https://danparshall.com">Dan Parshall</a> (physicist-turned-data-scientist, now
+			working on AI policy at the <a href="https://canaryinstitute.ai">Canary Institute</a>) and
+			<a href="https://andrealopezluzuriaga.net">Andrea Lopez-Luzuriaga</a> (economist). It grew
+			out of our own research workflows, and we share it in the hope it's useful to yours.
+		</p>
+		<p>
+			The project is open source under the Apache 2.0 license. The full source, design notes,
+			and development history are public in the
+			<a href="https://github.com/danparshall/claude_researcher">GitHub repository</a>. Found a
+			problem? Ask Claude in any session to file an issue — or
+			<a href="https://github.com/danparshall/claude_researcher/issues">open one yourself</a>.
+		</p>
+	</section>
+
+	<section id="requirements">
+		<h2>Requirements</h2>
+		<ul>
+			<li>A <a href="https://claude.ai">claude.ai</a> Pro or Team subscription</li>
+			<li>A free <a href="https://github.com">GitHub</a> account</li>
+			<li>About 10 minutes for the one-time setup</li>
+			<li>No installation, no terminal, no coding</li>
+		</ul>
+	</section>
+</main>
+
+<footer>
+	<p>
+		<a href="https://github.com/danparshall/claude_researcher">GitHub</a> ·
+		<a href="https://github.com/danparshall/claude_researcher/blob/main/HUMANS.md">The longer story</a> ·
+		Apache 2.0
+	</p>
+	<p class="fineprint">
+		Claude Researcher is an independent open-source project. It is not affiliated with or endorsed
+		by Anthropic.
+	</p>
+</footer>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(function (btn) {
+	btn.addEventListener('click', function () {
+		var text = btn.parentElement.querySelector('.paste-block').textContent;
+		navigator.clipboard.writeText(text).then(function () {
+			btn.textContent = 'Copied ✓';
+			btn.classList.add('copied');
+			setTimeout(function () {
+				btn.textContent = 'Copy';
+				btn.classList.remove('copied');
+			}, 2000);
+		}, function () {
+			btn.textContent = 'Select & copy manually';
+		});
+	});
+});
+</script>
+
+</body>
 </html>

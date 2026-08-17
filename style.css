@@ -1,0 +1,156 @@
+/* Claude Researcher — clauderesearcher.com
+   Modernized-simple: static, no frameworks. One accent color, generous type. */
+
+:root {
+	--ink: #2b2b2b;
+	--ink-soft: #555;
+	--paper: #fbfaf8;
+	--card: #ffffff;
+	--accent: #2c6bab;       /* calm blue, descendant of fast.css's #4C8FCD */
+	--accent-dark: #1f4d7d;
+	--rule: #ddd8d0;
+	--mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0 auto;
+	padding: 2.5rem 1.25rem 4rem;
+	max-width: 46rem;
+	font-family: Charter, Georgia, "Times New Roman", serif;
+	font-size: 1.125rem;
+	line-height: 1.65;
+	color: var(--ink);
+	background-color: var(--paper);
+}
+
+h1, h2 {
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 2.6rem;
+	margin: 0 0 0.25rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin: 2.25rem 0 0.75rem;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* ---- Hero ---- */
+
+.hero .tagline {
+	font-size: 1.35rem;
+	font-style: italic;
+	color: var(--ink-soft);
+	margin: 0 0 1.5rem;
+}
+
+.lead { font-size: 1.15rem; }
+
+/* ---- Paste-block cards ---- */
+
+.cards { margin-top: 1.5rem; }
+
+.card {
+	background: var(--card);
+	border: 1px solid var(--rule);
+	border-radius: 10px;
+	padding: 1.25rem 1.5rem 1.5rem;
+	margin: 1.5rem 0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 { margin-top: 0.25rem; }
+
+.paste-wrap { position: relative; }
+
+.paste-block {
+	font-family: var(--mono);
+	font-size: 0.82rem;
+	line-height: 1.5;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	background: #f4f2ee;
+	border: 1px solid var(--rule);
+	border-radius: 8px;
+	padding: 1rem 1.1rem;
+	padding-top: 2.6rem;
+	margin: 0;
+	max-height: 16rem;
+	overflow-y: auto;
+}
+
+.copy-btn {
+	position: absolute;
+	top: 0.6rem;
+	right: 0.6rem;
+	font-family: inherit;
+	font-size: 0.95rem;
+	padding: 0.35rem 1rem;
+	color: #fff;
+	background: var(--accent);
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.copy-btn:hover, .copy-btn:focus-visible { background: var(--accent-dark); }
+.copy-btn.copied { background: #2e7d4f; }
+
+.fineprint {
+	font-size: 0.95rem;
+	color: var(--ink-soft);
+}
+
+/* ---- Below the fold ---- */
+
+hr.fold {
+	border: none;
+	border-top: 1px solid var(--rule);
+	margin: 3rem 0;
+}
+
+ul { padding-left: 1.4rem; }
+li { margin-bottom: 0.6rem; }
+
+figure {
+	margin: 1.75rem 0;
+}
+
+figure img {
+	max-width: 100%;
+	height: auto;
+	border: 1px solid var(--rule);
+	border-radius: 8px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+figcaption {
+	font-size: 0.95rem;
+	color: var(--ink-soft);
+	margin-top: 0.5rem;
+}
+
+/* ---- Footer ---- */
+
+footer {
+	margin-top: 3.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--rule);
+	text-align: center;
+}
+
+/* ---- Small screens ---- */
+
+@media (max-width: 480px) {
+	body { font-size: 1.05rem; padding-top: 1.5rem; }
+	h1 { font-size: 2rem; }
+	.card { padding: 1rem; }
+}
