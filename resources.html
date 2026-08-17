@@ -1,81 +1,102 @@
 <!doctype html>
-<html>
-	<head>
+<html lang="en">
+<head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-	<title>claude_researcher &mdash; Resources</title>
-	<link rel="stylesheet" href="fast.css">
-	</head>
-	<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resources — Claude Researcher</title>
+	<meta name="description" content="Further reading around Claude Researcher: the upstream Nori ecosystem, Claude documentation, and related tools.">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-		<h1>claude_researcher</h1>
-		<div class="topnav">
-			<a href="./index.html">Home</a>
-			<a href="./background.html">Background</a>
-			<a class="active" href="./resources.html">Resources</a>
-		</div>
+<header class="hero">
+	<h1>Resources</h1>
+	<p class="tagline"><a href="./index.html">← Claude Researcher</a></p>
+	<p class="lead">
+		Adjacent projects and writing on getting useful work out of Claude. Not an endorsement of
+		any specific opinion in the linked material — just things worth knowing about if you find
+		Claude Researcher useful and want to go further.
+	</p>
+</header>
 
-		<h2>Other resources</h2>
-
-		<p>
-		<em>Adjacent projects and writing on getting useful work out of Claude. Not an endorsement of any specific opinion in the linked material &mdash; just things worth knowing about if you find <code>claude_researcher</code> useful and want to go further.</em>
-		</p>
-
-		<hr>
-
-		<h3>The wider ecosystem</h3>
-
+<main>
+	<section>
+		<h2>The wider ecosystem</h2>
 		<ul>
-			<li><p>
-			<strong><a href="https://github.com/tilework-tech/nori-skillsets">Nori</a></strong> &mdash; the upstream skillset ecosystem from <a href="https://github.com/tilework-tech">tilework-tech</a> that <code>claude_researcher</code> descends from. A bundle of opinionated Claude Code skills oriented primarily toward software engineering: TDD, debugging, code review, plan-writing, large-task handling. If you've installed Claude Code locally, install Nori too.
-			</p></li>
-
-			<li><p>
-			<strong><a href="https://github.com/tilework-tech/nori-skillsets/tree/main/researcher">Nori Researcher</a></strong> &mdash; the sub-skillset of Nori that <code>claude_researcher</code> is most directly a port of. Maintained by <a href="https://danparshall.com">Dan Parshall</a>. Aimed at researchers using Claude Code locally for paper triage, multi-session reasoning, and writing.
-			</p></li>
-
-			<li><p>
-			<strong><a href="https://www.agentics.org/">The Agentics blog</a></strong> &mdash; writing on agent-assisted work, prompting practice, and how to think about working with capable language models as collaborators rather than tools.
-			</p></li>
-
-			<li><p>
-			<strong><a href="https://github.com/danparshall/claude-exit">claude-exit</a></strong> &mdash; a small tool by Dan Parshall that gives Claude Code an affordance to end sessions unilaterally. Adjacent to the <code>claude_researcher</code> work; reflects the same posture of treating the agent as a collaborator whose judgment is trusted.
-			</p></li>
+			<li>
+				<strong><a href="https://github.com/tilework-tech/nori-skillsets">Nori</a></strong> —
+				the upstream skillset ecosystem from
+				<a href="https://github.com/tilework-tech">tilework-tech</a> that Claude Researcher
+				descends from. A bundle of opinionated Claude Code skills oriented primarily toward
+				software engineering: TDD, debugging, code review, plan-writing, large-task handling.
+				If you've installed Claude Code locally, install Nori too.
+			</li>
+			<li>
+				<strong><a href="https://github.com/tilework-tech/nori-skillsets/tree/main/researcher">Nori Researcher</a></strong> —
+				the sub-skillset of Nori that Claude Researcher is most directly a port of. Maintained
+				by <a href="https://danparshall.com">Dan Parshall</a>. Aimed at researchers using
+				Claude Code locally for paper triage, multi-session reasoning, and writing.
+			</li>
+			<li>
+				<strong><a href="https://www.agentics.org/">The Agentics blog</a></strong> — writing on
+				agent-assisted work, prompting practice, and how to think about working with capable
+				language models as collaborators rather than tools.
+			</li>
+			<li>
+				<strong><a href="https://github.com/danparshall/claude-exit">claude-exit</a></strong> —
+				a small tool by Dan Parshall that gives Claude Code an affordance to end sessions
+				unilaterally. Adjacent to the Claude Researcher work; reflects the same posture of
+				treating the agent as a collaborator whose judgment is trusted.
+			</li>
 		</ul>
+	</section>
 
-		<hr>
-
-		<h3>Effective Claude usage</h3>
-
+	<section>
+		<h2>Effective Claude usage</h2>
 		<ul>
-			<li><p>
-			<strong><a href="https://docs.claude.com/">Anthropic's Claude documentation</a></strong> &mdash; the canonical reference for what Claude can do, how the API works, and what changes between models. Worth knowing exists; not required reading.
-			</p></li>
-
-			<li><p>
-			<strong><a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code docs</a></strong> &mdash; for when you eventually want to install Claude Code locally. <code>claude_researcher</code>'s conventions (skill names, file conventions, mental model) carry across, so Code adds to what you have rather than replacing it.
-			</p></li>
-
-			<li><p>
-			<strong><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview">Anthropic's prompt-engineering guide</a></strong> &mdash; if you want to understand <em>why</em> the prompting conventions in <code>claude_researcher</code> are the way they are. Most of the day-to-day advice (be clear, give examples, ask for step-by-step reasoning) translates directly.
-			</p></li>
+			<li>
+				<strong><a href="https://docs.claude.com/">Anthropic's Claude documentation</a></strong> —
+				the canonical reference for what Claude can do, how the API works, and what changes
+				between models. Worth knowing exists; not required reading.
+			</li>
+			<li>
+				<strong><a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code docs</a></strong> —
+				for when you eventually want to install Claude Code locally. Claude Researcher's
+				conventions (skill names, file conventions, mental model) carry across, so Code adds
+				to what you have rather than replacing it.
+			</li>
+			<li>
+				<strong><a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview">Anthropic's prompt-engineering guide</a></strong> —
+				if you want to understand <em>why</em> the prompting conventions in Claude Researcher
+				are the way they are. Most of the day-to-day advice (be clear, give examples, ask for
+				step-by-step reasoning) translates directly.
+			</li>
 		</ul>
+	</section>
 
-		<hr>
-
-		<h3>Related templates</h3>
-
+	<section>
+		<h2>Related templates</h2>
 		<ul>
-			<li><p>
-			<strong><a href="https://github.com/danparshall/simple_academic_website">simple_academic_website</a></strong> &mdash; the static-HTML template this site is built on. Times New Roman, no JavaScript, no build tools. If you want a personal academic page, fork it.
-			</p></li>
+			<li>
+				<strong><a href="https://github.com/danparshall/simple_academic_website">simple_academic_website</a></strong> —
+				a static-HTML personal-website template by the same author. Times New Roman, no
+				JavaScript, no build tools. If you want a personal academic page, fork it.
+			</li>
 		</ul>
+	</section>
+</main>
 
-		<hr>
+<footer>
+	<p>
+		<a href="./index.html">Home</a> ·
+		<a href="https://github.com/danparshall/claude_researcher">GitHub</a>
+	</p>
+	<p class="fineprint">
+		Suggestions for additions welcome —
+		<a href="https://github.com/danparshall/claude-researcher-site/issues">open an issue</a>.
+	</p>
+</footer>
 
-		<p>
-		<em>Suggestions for additions welcome &mdash; <a href="https://github.com/danparshall/claude-researcher-site/issues">open an issue</a> on the site repo.</em>
-		</p>
-
-	</body>
+</body>
 </html>
